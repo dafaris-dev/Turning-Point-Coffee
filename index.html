@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
 
 <style>
-/* ── Design system: Warm Minimalist Editorial ── */
 :root {
   --max-w: 1200px;
   --nav-h: 72px;
@@ -20,8 +19,8 @@
   --accent-lt: #BEA07A;
   --border:    #D8CEBC;
   --card-bg:   #FDFCFA;
-  --serif: 'Cormorant', Georgia, 'Times New Roman', serif;
-  --sans:  'DM Sans', system-ui, -apple-system, sans-serif;
+  --serif: 'Cormorant', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -33,7 +32,7 @@
   --bg:#180E06;--bg-warm:#211408;--bg-muted:#2D1D0D;--fg:#F2EDE3;--fg-muted:#BEA07A;--accent:#C4A882;--accent-lt:#7A5338;--border:#3D2B1A;--card-bg:#231508;color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);background:var(--bg);color:var(--fg);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.65}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:110;background:var(--bg)}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--max-w);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
@@ -41,14 +40,14 @@ img{max-width:100%;display:block}
 /* Nav */
 .nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s}
 .nav.solid{background:var(--bg);box-shadow:0 1px 0 var(--border)}
-.nav-inner{max-width:var(--max-w);margin-inline:auto;display:flex;align-items:center;height:var(--nav-h);gap:0 32px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--fg);text-decoration:none;letter-spacing:.03em;flex-shrink:0;margin-right:auto}
-.nav-links{list-style:none;display:flex;gap:28px}
+.nav-inner{max-width:var(--max-w);margin-inline:auto;display:flex;align-items:center;height:var(--nav-h);gap:28px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--fg);text-decoration:none;letter-spacing:.03em;margin-right:auto}
+.nav-links{list-style:none;display:flex;gap:26px}
 .nav-links a{font-size:.8rem;color:var(--fg-muted);text-decoration:none;letter-spacing:.03em;transition:color .2s}
 .nav-links a:hover{color:var(--fg)}
-.btn-nav{flex-shrink:0;background:var(--fg);color:var(--bg);font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 20px;border-radius:2px;transition:opacity .2s;white-space:nowrap}
+.btn-nav{background:var(--fg);color:var(--bg);font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 20px;border-radius:2px;white-space:nowrap;transition:opacity .2s}
 .btn-nav:hover{opacity:.78}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;color:var(--fg);margin-left:8px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;color:var(--fg)}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--fg);transition:transform .22s,opacity .22s}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -56,121 +55,94 @@ img{max-width:100%;display:block}
 @media(max-width:860px){
   .nav-links,.btn-nav{display:none}
   .hamburger{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);padding:20px max(24px,env(safe-area-inset-left,0px));gap:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);border-top:1px solid var(--border);z-index:99}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);padding:20px max(24px,env(safe-area-inset-left,0px));gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);border-top:1px solid var(--border);z-index:99}
   .nav-links.open a{font-size:1rem}
 }
 
 /* Buttons */
-.btn-primary{display:inline-block;background:var(--fg);color:var(--bg);font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 28px;border-radius:2px;border:none;cursor:pointer;transition:opacity .2s}
+.btn-primary{display:inline-block;background:var(--fg);color:var(--bg);font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 28px;border-radius:2px;transition:opacity .2s}
 .btn-primary:hover{opacity:.78}
-.btn-outline{display:inline-block;background:transparent;color:var(--fg);font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 27px;border:1px solid var(--fg);border-radius:2px;cursor:pointer;transition:background .2s,color .2s}
+.btn-outline{display:inline-block;background:transparent;color:var(--fg);font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 27px;border:1px solid var(--fg);border-radius:2px;transition:background .2s,color .2s}
 .btn-outline:hover{background:var(--fg);color:var(--bg)}
 .btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:14px 24px;border-radius:2px;transition:opacity .2s}
 .btn-wa:hover{opacity:.86}
 
-/* Section common */
-.section{padding-block:96px}
-.section-label{font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:14px}
-.section-title{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:400;line-height:1.12;color:var(--fg);text-wrap:balance;margin-bottom:16px}
-.section-sub{font-size:1rem;color:var(--fg-muted);line-height:1.72;max-width:55ch}
-.divider{width:36px;height:1px;background:var(--accent-lt);margin-block:24px}
-.ph{display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.ph span{font-family:var(--sans);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:1}
+/* Section */
+.section{padding-block:88px}
+.section-label{font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4.5vw,2.8rem);font-weight:400;line-height:1.12;text-wrap:balance;margin-bottom:14px}
+.section-sub{font-size:1rem;color:var(--fg-muted);line-height:1.7;max-width:52ch}
+.divider{width:36px;height:1px;background:var(--accent-lt);margin-block:22px}
 
 /* Hero */
 .hero{min-height:100svh;background:var(--bg-warm);display:flex;align-items:center;padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 32px);padding-bottom:72px}
-.hero-layout{width:100%;max-width:var(--max-w);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+.hero-layout{width:100%;max-width:var(--max-w);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
 .hero-eyebrow{font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.hero-title{font-family:var(--serif);font-size:clamp(3.2rem,7.5vw,5.5rem);font-weight:400;line-height:1.04;color:var(--fg);text-wrap:balance;margin-bottom:24px}
+.hero-title{font-family:var(--serif);font-size:clamp(3.2rem,7.5vw,5.5rem);font-weight:400;line-height:1.04;text-wrap:balance;margin-bottom:24px}
 .hero-title em{font-style:italic;color:var(--accent)}
 .hero-sub{font-size:1.0625rem;color:var(--fg-muted);line-height:1.72;max-width:46ch;margin-bottom:40px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
-.hero-img{aspect-ratio:4/5;border-radius:2px;overflow:hidden}
-.hero-img .ph{width:100%;height:100%;background:linear-gradient(145deg,#E8DFD0 0%,#D4C3A8 55%,#C4B090 100%)}
-.hero-img .ph span{color:rgba(100,70,40,.4)}
-@media(max-width:768px){.hero-layout{grid-template-columns:1fr;gap:44px}.hero-img{order:-1;aspect-ratio:3/2}}
+.hero-logo-box{display:flex;align-items:center;justify-content:center;border-radius:2px;overflow:hidden;background:var(--bg-muted)}
+.hero-logo-box img{width:100%;height:100%;object-fit:cover}
+@media(max-width:768px){.hero-layout{grid-template-columns:1fr;gap:40px}.hero-logo-box{order:-1;max-width:220px;margin-inline:auto}}
 
 /* About */
-.about{background:var(--bg)}
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-img{aspect-ratio:3/4;border-radius:2px;overflow:hidden}
-.about-img .ph{width:100%;height:100%;background:linear-gradient(145deg,#DDD4C0 0%,#C9B99A 60%,#B8A484 100%)}
-.about-img .ph span{color:rgba(80,55,30,.38)}
-.about-quote{font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--fg);line-height:1.4;padding-left:20px;border-left:2px solid var(--accent-lt);margin-block:24px 32px}
-.about-body{font-size:.9375rem;color:var(--fg-muted);line-height:1.75;margin-bottom:16px}
-@media(max-width:768px){.about-layout{grid-template-columns:1fr;gap:40px}}
+.about-body{font-size:.9375rem;color:var(--fg-muted);line-height:1.75;margin-bottom:14px}
+.about-quote{font-family:var(--serif);font-size:1.45rem;font-style:italic;color:var(--fg);line-height:1.4;padding-left:20px;border-left:2px solid var(--accent-lt);margin-block:24px 32px}
+.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:680px){.about-cols{grid-template-columns:1fr}}
 
 /* Menu CTA */
-.menu-cta-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:760px;margin:0 auto 48px;background:var(--border);gap:1px;border:1px solid var(--border)}
-.menu-cta-item{padding:28px 24px;background:var(--card-bg);text-align:center}
-.menu-cta-name{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--fg);margin-bottom:6px}
-.menu-cta-desc{font-size:.8rem;color:var(--fg-muted);line-height:1.5}
-@media(max-width:600px){.menu-cta-grid{grid-template-columns:1fr}}
-
-/* Experience */
-.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:56px}
-.exp-item{padding:40px 28px;border-right:1px solid var(--border);min-width:0}
-.exp-item:last-child{border-right:none}
-.exp-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:20px}
-.exp-title{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--fg);margin-bottom:10px;text-wrap:balance}
-.exp-desc{font-size:.875rem;color:var(--fg-muted);line-height:1.65}
-@media(max-width:860px){.exp-grid{grid-template-columns:1fr 1fr}.exp-item{border-bottom:1px solid var(--border)}.exp-item:nth-child(2){border-right:none}.exp-item:nth-child(3),.exp-item:nth-child(4){border-right:none;border-bottom:none}.exp-item:nth-child(3){border-right:1px solid var(--border)}}
-@media(max-width:480px){.exp-grid{grid-template-columns:1fr}.exp-item{border-right:none!important;border-bottom:1px solid var(--border)}.exp-item:last-child{border-bottom:none}}
+.menu-cta{background:var(--bg-warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.menu-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-block:56px}
+.menu-cta-text h2{font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:400;margin-bottom:8px}
+.menu-cta-text p{font-size:.9375rem;color:var(--fg-muted);max-width:48ch}
+@media(max-width:600px){.menu-cta-inner{flex-direction:column;align-items:flex-start}}
 
 /* Reviews */
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:56px}
-.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:2px;padding:28px}
-.review-stars{display:flex;gap:2px;color:var(--accent);font-size:.875rem;margin-bottom:16px}
-.review-text{font-family:var(--serif);font-size:.9375rem;font-style:italic;color:var(--fg);line-height:1.7;margin-bottom:20px}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:48px}
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:2px;padding:26px}
+.review-stars{color:var(--accent);font-size:.875rem;margin-bottom:14px;letter-spacing:2px}
+.review-text{font-family:var(--serif);font-size:.9375rem;font-style:italic;color:var(--fg);line-height:1.7;margin-bottom:18px}
 .review-author{font-size:.8rem;font-weight:500;color:var(--fg)}
 .review-source{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-lt);margin-top:2px}
 
-/* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:3px;margin-top:52px}
-.gal-item{overflow:hidden}
-.gal-item .ph{width:100%;height:100%}
-.gal-item:nth-child(1){grid-row:span 2}
-.gal-item:nth-child(4){grid-column:span 2}
-@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,180px)}.gal-item:nth-child(1){grid-row:span 1}.gal-item:nth-child(4){grid-column:span 1}.gal-item:nth-child(5),.gal-item:nth-child(6){display:none}}
-
 /* Location */
-.location-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px;align-items:start}
+.location-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px;align-items:start}
 .map-box{aspect-ratio:4/3;background:var(--bg-muted);border:1px solid var(--border);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:32px}
-.map-box p{font-size:.875rem;color:var(--fg-muted);line-height:1.55}
-.loc-heading{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:8px}
-.loc-addr{font-size:.9375rem;color:var(--fg-muted);line-height:1.6;margin-bottom:28px}
-.hours-table{width:100%;border-collapse:collapse;font-size:.875rem;margin-bottom:28px}
+.map-box p{font-size:.875rem;color:var(--fg-muted);line-height:1.6}
+.loc-heading{font-family:var(--serif);font-size:1.4rem;font-weight:500;margin-bottom:6px}
+.loc-addr{font-size:.9rem;color:var(--fg-muted);line-height:1.65;margin-bottom:24px}
+.hours-table{width:100%;border-collapse:collapse;font-size:.875rem;margin-bottom:24px}
 .hours-table tr{border-bottom:1px solid var(--border)}
 .hours-table tr:last-child{border-bottom:none}
-.hours-table td{padding:9px 0;color:var(--fg-muted)}
-.hours-table td:last-child{text-align:right;color:var(--fg);font-variant-numeric:tabular-nums}
-.contact-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.hours-table td{padding:8px 0;color:var(--fg-muted)}
+.hours-table td:last-child{text-align:right;color:var(--fg)}
+.contact-list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
 .contact-row{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--fg-muted)}
 .contact-row svg{flex-shrink:0;color:var(--accent)}
-@media(max-width:768px){.location-layout{grid-template-columns:1fr;gap:40px}.map-box{aspect-ratio:16/9}}
+@media(max-width:768px){.location-layout{grid-template-columns:1fr;gap:36px}.map-box{aspect-ratio:16/9}}
 
 /* Footer */
-.footer{background:var(--fg);color:var(--bg);padding-top:56px;padding-bottom:max(48px,calc(32px + env(safe-area-inset-bottom,0px)));padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.footer{background:var(--fg);color:var(--bg);padding-top:52px;padding-bottom:max(44px,calc(28px + env(safe-area-inset-bottom,0px)));padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 .footer-inner{max-width:var(--max-w);margin-inline:auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:28px}
-.footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--bg);margin-bottom:10px}
-.footer-tagline{font-size:.875rem;opacity:.58;line-height:1.65;max-width:32ch;margin-bottom:20px}
-.footer-socials{display:flex;gap:10px}
-.footer-socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.65);text-decoration:none;transition:border-color .2s,color .2s}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:24px}
+.footer-logo{font-family:var(--serif);font-size:1.2rem;color:var(--bg);margin-bottom:8px}
+.footer-tagline{font-size:.875rem;opacity:.55;line-height:1.65;max-width:30ch;margin-bottom:18px}
+.footer-socials{display:flex;gap:8px}
+.footer-socials a{width:34px;height:34px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.58);text-decoration:none;transition:border-color .2s,color .2s}
 .footer-socials a:hover{border-color:rgba(255,255,255,.45);color:#fff}
-.footer-col h4{font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;opacity:.45;font-weight:500;margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.footer-col a{font-size:.875rem;color:rgba(255,255,255,.62);text-decoration:none;transition:color .2s}
+.footer-col h4{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;opacity:.42;font-weight:500;margin-bottom:12px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.875rem;color:rgba(255,255,255,.58);text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:#fff}
-.footer-col p{font-size:.875rem;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:6px}
-.footer-copy{font-size:.78rem;opacity:.38}
-@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:span 2}}
-@media(max-width:480px){.footer-top{grid-template-columns:1fr}.footer-brand{grid-column:span 1}}
+.footer-col p{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:4px}
+.footer-copy{font-size:.75rem;opacity:.35}
+@media(max-width:680px){.footer-top{grid-template-columns:1fr;gap:32px}}
 
 /* Floating WA */
-.wa-float{position:fixed;bottom:calc(28px + env(safe-area-inset-bottom,0px));right:max(28px,env(safe-area-inset-right,0px));z-index:90;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.3);color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s}
-.wa-float:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(37,211,102,.4)}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+.wa-float{position:fixed;bottom:calc(28px + env(safe-area-inset-bottom,0px));right:max(28px,env(safe-area-inset-right,0px));z-index:90;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.3);color:#fff;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:translateY(-2px)}
 </style>
 
 <!-- NAV -->
@@ -181,8 +153,6 @@ img{max-width:100%;display:block}
       <li><a href="#beranda">Beranda</a></li>
       <li><a href="menu.html">Menu</a></li>
       <li><a href="#tentang">Tentang Kami</a></li>
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#ulasan">Ulasan</a></li>
       <li><a href="#lokasi">Lokasi</a></li>
     </ul>
     <a href="https://api.whatsapp.com/send/?phone=%2B628111099444&text=Halo%20Turning%20Point%20Coffee%2C%20saya%20ingin%20bertanya%20mengenai%20menu%20dan%20informasi%20coffee%20shop.&type=phone_number&app_absent=0" class="btn-nav" target="_blank" rel="noopener">Hubungi Kami</a>
@@ -195,7 +165,7 @@ img{max-width:100%;display:block}
 <!-- HERO -->
 <section class="hero" id="beranda">
   <div class="hero-layout">
-    <div class="hero-text">
+    <div>
       <p class="hero-eyebrow">Kelapa Dua, Tangerang &nbsp;·&nbsp; Buka Setiap Hari</p>
       <h1 class="hero-title">Temukan<br>Momen<br><em>Terbaik</em></h1>
       <p class="hero-sub">Tempat untuk menikmati kopi, bekerja dengan nyaman, membaca buku, atau sekadar menghabiskan waktu bersama orang-orang terdekat.</p>
@@ -207,26 +177,26 @@ img{max-width:100%;display:block}
         </a>
       </div>
     </div>
-    <div class="hero-img">
-      <div class="ph"><span>Interior Coffee Shop</span></div>
+    <div class="hero-logo-box" style="aspect-ratio:3/4;max-width:380px">
+      <img src="data:image/png;base64,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" alt="Turning Point Coffee Logo" style="width:100%;height:100%;object-fit:cover">
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section about" id="tentang">
+<section class="section" id="tentang" style="background:var(--bg)">
   <div class="wrap">
-    <div class="about-layout">
-      <div class="about-img">
-        <div class="ph"><span style="color:rgba(80,55,30,.38)">Area Tempat Duduk</span></div>
-      </div>
+    <div class="about-cols">
       <div>
         <p class="section-label">Tentang Kami</p>
         <h2 class="section-title">Lebih dari Sekadar Tempat Menikmati Kopi.</h2>
         <div class="divider"></div>
-        <p class="about-body">Turning Point Coffee menghadirkan ruang yang nyaman untuk menikmati kopi dan menghabiskan waktu. Dengan suasana yang tenang, desain interior yang menarik, serta pilihan makanan dan minuman, kami ingin menjadi tempat yang cocok untuk berbagai aktivitas.</p>
+        <p class="about-body">Turning Point Coffee menghadirkan ruang yang nyaman untuk menikmati kopi dan menghabiskan waktu. Dengan suasana yang tenang dan desain interior yang menarik, kami ingin menjadi tempat yang cocok untuk berbagai aktivitas.</p>
         <p class="about-body">Dari pencinta kopi hingga pekerja yang membutuhkan ruang kondusif, mahasiswa yang ingin belajar, atau keluarga yang ingin berkumpul — Turning Point Coffee hadir untuk semua.</p>
+      </div>
+      <div>
         <blockquote class="about-quote">"Ruang yang nyaman, kopi yang baik, dan waktu yang bermakna."</blockquote>
+        <p class="about-body">Wi-Fi tersedia, colokan di setiap meja, dan suasana kondusif untuk pelanggan yang ingin bekerja atau belajar sambil menikmati sajian kami.</p>
         <a href="https://api.whatsapp.com/send/?phone=%2B628111099444&text=Halo%20Turning%20Point%20Coffee%2C%20saya%20ingin%20bertanya%20mengenai%20menu%20dan%20informasi%20coffee%20shop.&type=phone_number&app_absent=0" class="btn-outline" target="_blank" rel="noopener">Hubungi Kami</a>
       </div>
     </div>
@@ -234,69 +204,22 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- MENU CTA -->
-<section class="section" id="menu" style="background:var(--bg-warm)">
+<div class="menu-cta">
   <div class="wrap">
-    <div style="text-align:center;max-width:580px;margin-inline:auto;margin-bottom:48px">
-      <p class="section-label">Menu Kami</p>
-      <h2 class="section-title">Nikmati Pilihan Rasa Kami.</h2>
-      <p class="section-sub" style="margin-inline:auto">Kopi spesial, minuman segar, dan hidangan lezat — semua tersedia untuk menemani waktu Anda di Turning Point Coffee.</p>
-    </div>
-    <div class="menu-cta-grid">
-      <div class="menu-cta-item">
-        <p class="menu-cta-name">Kopi &amp; Minuman</p>
-        <p class="menu-cta-desc">Espresso, latte, special beverages, iced tea &amp; milkshake</p>
+    <div class="menu-cta-inner">
+      <div class="menu-cta-text">
+        <h2>Lihat Menu Lengkap Kami</h2>
+        <p>Kopi spesial, minuman segar, dan hidangan lezat — mulai dari Rp 20.000.</p>
       </div>
-      <div class="menu-cta-item">
-        <p class="menu-cta-name">Makanan</p>
-        <p class="menu-cta-desc">Light bites, healthy bowl &amp; pastries pilihan</p>
-      </div>
-      <div class="menu-cta-item">
-        <p class="menu-cta-name">Mulai Rp 20.000</p>
-        <p class="menu-cta-desc">Harga terjangkau untuk semua pilihan menu</p>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <a href="menu.html" class="btn-primary">Lihat Menu Lengkap</a>
+      <a href="menu.html" class="btn-primary">Lihat Menu</a>
     </div>
   </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="section" style="background:var(--bg)">
-  <div class="wrap">
-    <div style="max-width:520px">
-      <p class="section-label">Pengalaman</p>
-      <h2 class="section-title">Ruang Nyaman untuk Setiap Aktivitas.</h2>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-item">
-        <div class="exp-num">01</div>
-        <h3 class="exp-title">Suasana Cozy</h3>
-        <p class="exp-desc">Interior bernuansa beige dan broken white yang hangat, menciptakan suasana yang menenangkan sejak Anda masuk.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-num">02</div>
-        <h3 class="exp-title">Nyaman untuk Bekerja</h3>
-        <p class="exp-desc">Wi-Fi, colokan di setiap meja, dan suasana kondusif untuk pelanggan yang ingin bekerja menggunakan laptop.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-num">03</div>
-        <h3 class="exp-title">Tempat yang Tenang</h3>
-        <p class="exp-desc">Cocok untuk membaca buku, berbincang, atau sekadar menikmati waktu sendiri dengan secangkir kopi yang baik.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-num">04</div>
-        <h3 class="exp-title">Pilihan Menu</h3>
-        <p class="exp-desc">Kopi, minuman, dan makanan yang disiapkan untuk menemani berbagai aktivitas selama kunjungan Anda.</p>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- REVIEWS -->
-<section class="section" id="ulasan" style="background:var(--bg-warm)">
+<section class="section" id="ulasan" style="background:var(--bg-muted)">
   <div class="wrap">
-    <div style="text-align:center;max-width:480px;margin-inline:auto">
+    <div style="text-align:center;max-width:460px;margin-inline:auto">
       <p class="section-label">Ulasan Pelanggan</p>
       <h2 class="section-title">Apa Kata Pelanggan Kami?</h2>
     </div>
@@ -329,58 +252,30 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section" id="galeri" style="background:var(--bg-muted)">
-  <div class="wrap">
-    <div style="text-align:center;max-width:480px;margin-inline:auto">
-      <p class="section-label">Galeri</p>
-      <h2 class="section-title">Sekilas Turning Point Coffee</h2>
-    </div>
-    <div class="gallery-grid">
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#C8B89A,#B4A285 50%,#A09070)"><span style="color:rgba(80,55,30,.4)">Interior Utama</span></div></div>
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#3D2810,#6B4520 55%,#8B5E30)"><span style="color:rgba(255,255,255,.38)">Cloud Peak</span></div></div>
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#DDD4C0,#C9B99A 55%,#B8A484)"><span style="color:rgba(80,55,30,.4)">Area Duduk</span></div></div>
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#E8DFD0,#D4C3A8 55%,#C4B090)"><span style="color:rgba(80,55,30,.38)">Area Barista</span></div></div>
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#2D1810,#4A2818 50%,#6B3A22)"><span style="color:rgba(255,255,255,.38)">Pastries</span></div></div>
-      <div class="gal-item"><div class="ph" style="height:100%;background:linear-gradient(145deg,#C4B4A0,#B4A490 50%,#A09480)"><span style="color:rgba(80,55,30,.38)">Suasana Cafe</span></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- LOCATION -->
 <section class="section" id="lokasi" style="background:var(--bg)">
   <div class="wrap">
-    <div style="text-align:center;max-width:480px;margin-inline:auto">
+    <div style="text-align:center;max-width:460px;margin-inline:auto">
       <p class="section-label">Kunjungi Kami</p>
-      <h2 class="section-title">Kunjungi Turning Point Coffee.</h2>
+      <h2 class="section-title">Temukan Kami di Kelapa Dua.</h2>
     </div>
     <div class="location-layout">
       <div class="map-box">
-        <svg style="opacity:.4;color:var(--fg-muted)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <svg style="opacity:.38;color:var(--fg-muted)" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         <p><strong>Turning Point Coffee</strong><br>Ruko Golden 8 Extension Blok G No. 5<br>Jl. Ki Hajar Dewantara, Kelapa Dua<br>Tangerang, Banten 15810</p>
-        <a href="https://maps.google.com/?q=Ruko+Golden+8+Extension+Blok+G+No.+5+Jl.+Ki+Hajar+Dewantara+Pakulonan+Barat+Kelapa+Dua+Tangerang+Banten+15810" target="_blank" rel="noopener" class="btn-outline">Petunjuk Arah</a>
+        <a href="https://maps.google.com/?q=Ruko+Golden+8+Extension+Blok+G+No.+5+Jl.+Ki+Hajar+Dewantara+Pakulonan+Barat+Kelapa+Dua+Tangerang+Banten+15810" target="_blank" rel="noopener" class="btn-outline">Buka di Google Maps</a>
       </div>
       <div>
         <h3 class="loc-heading">Jam Operasional</h3>
         <p class="loc-addr">Ruko Golden 8 Extension Blok G No. 5, Jl. Ki Hajar Dewantara, Pakulonan Barat, Kec. Kelapa Dua, Kab. Tangerang, Banten 15810</p>
         <table class="hours-table">
           <tbody>
-            <tr><td>Senin</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Selasa</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Rabu</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Kamis</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Jumat</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Sabtu</td><td>09.00 – 18.00 WIB</td></tr>
-            <tr><td>Minggu</td><td>09.00 – 18.00 WIB</td></tr>
+            <tr><td>Senin – Minggu</td><td>09.00 – 18.00 WIB</td></tr>
           </tbody>
         </table>
         <div class="contact-list">
           <div class="contact-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            <span>Ruko Golden 8 Extension Blok G No. 5, Kelapa Dua, Tangerang</span>
-          </div>
-          <div class="contact-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span>+62 811-1099-444</span>
           </div>
         </div>
@@ -397,7 +292,7 @@ img{max-width:100%;display:block}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand">
+      <div>
         <p class="footer-logo">Turning Point Coffee</p>
         <p class="footer-tagline">Ruang yang nyaman untuk menikmati kopi, bekerja, membaca, dan menghabiskan waktu bersama.</p>
         <div class="footer-socials">
@@ -418,8 +313,6 @@ img{max-width:100%;display:block}
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="#tentang">Tentang Kami</a></li>
-          <li><a href="#galeri">Galeri</a></li>
-          <li><a href="#ulasan">Ulasan</a></li>
           <li><a href="#lokasi">Lokasi</a></li>
         </ul>
       </div>
